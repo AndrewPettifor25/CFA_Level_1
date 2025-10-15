@@ -13,7 +13,7 @@ editor: visual
 Interpret interest rates as required rates of return, discount rates, or opportunity costs, and explain an interest rate as the sum of a real risk-free rate and risk premiums.
 :::
 
----
+------------------------------------------------------------------------
 
 ### 1. Understanding Interest Rates
 
@@ -21,24 +21,24 @@ Interest rates represent the **time value of money** — the compensation invest
 
 They can be interpreted in three equivalent ways:
 
-- **Required rate of return:** the minimum return that investors demand to lend funds.  
-- **Discount rate:** the rate used to determine the present value of future cash flows.  
-- **Opportunity cost:** the return forgone by consuming now instead of saving or investing.
+-   **Required rate of return:** the minimum return that investors demand to lend funds.\
+-   **Discount rate:** the rate used to determine the present value of future cash flows.\
+-   **Opportunity cost:** the return forgone by consuming now instead of saving or investing.
 
 In equilibrium, the interest rate equals the **market’s required rate of return**, ensuring that lenders and borrowers are willing to transact.
 
----
+------------------------------------------------------------------------
 
 ### 2. The Real Risk-Free Rate
 
 The **real risk-free rate** is a **theoretical rate** on a single-period, riskless loan with:
 
-- No expectation of inflation, and  
-- Zero probability of default.
+-   No expectation of inflation, and\
+-   Zero probability of default.
 
 It reflects **time preference for consumption** — the degree to which individuals prefer current consumption to future consumption.
 
----
+------------------------------------------------------------------------
 
 ### 3. Nominal vs. Real Rates
 
@@ -47,47 +47,311 @@ Because inflation erodes purchasing power, investors demand an **inflation premi
 The relationship between nominal and real rates is:
 
 $$
-(1 + r_{\text{nominal}}) = (1 + r_{\text{real}})(1 + \pi_{\text{expected}})
+(1 + r_{\text{nominal}}) = (1 + r_{\text{real}})(1 + Inf_{\text{expected}})
 $$
 
 A common approximation used throughout the CFA curriculum is:
 
 $$
-r_{\text{nominal}} \approx r_{\text{real}} + \pi_{\text{expected}}
+r_{\text{nominal}} \approx r_{\text{real}} + Inf_{\text{expected}}
 $$
 
-Where:  
-- \( r_{\text{real}} \) = Real risk-free rate  
-- \( \pi_{\text{expected}} \) = Expected inflation rate
+Where:
 
----
+
+- $r_{\text{real}}$ = Real risk-free rate  
+- $Inf_{\text{expected}}$ = Expected inflation rate
+
+------------------------------------------------------------------------
 
 ### 4. Risk Premiums
 
 Real-world securities often carry additional risks. Investors demand **risk premiums** to compensate for these:
 
 | **Risk Type** | **Definition** | **Premium Added** |
-|----------------|----------------|-------------------|
+|-----------------------|-----------------------|---------------------------|
 | **Default Risk** | The risk the borrower fails to make payments as promised. | Default Risk Premium (DRP) |
 | **Liquidity Risk** | The risk of selling an asset below fair value when quick sale is needed. | Liquidity Premium (LP) |
 | **Maturity Risk** | The risk that longer-term bonds fluctuate more in price than shorter-term ones. | Maturity Premium (MP) |
 
----
+------------------------------------------------------------------------
 
 ### 5. Complete Interest Rate Structure
 
 The nominal interest rate on a security combines all these elements:
 
 $$
-r_{\text{nominal}} = r_{\text{real}} + \pi_{\text{expected}} + \text{DRP} + \text{LP} + \text{MP}
+r_{\text{nominal}} = r_{\text{real}} + Inf_{\text{expected}} + \text{DRP} + \text{LP} + \text{MP}
+$$
+
+------------------------------------------------------------------------
+
+### ✅ Key Takeaway
+
+> Interest rates reflect both the **time value of money** and **compensation for bearing risk**.\
+> The **real risk-free rate** is the foundation, while risk premiums account for inflation, default, liquidity, and maturity.
+
+------------------------------------------------------------------------
+
+
+## LOS 1.b — Calculate and Interpret Different Approaches to Return Measurement Over Time
+
+::: {.callout-note title="Learning Objective"}
+Calculate and interpret different approaches to return measurement over time and describe their appropriate uses.
+:::
+
+---
+
+### 1. Holding Period Return (HPR)
+
+The **holding period return (HPR)** measures the percentage increase in the value of an investment over a specific time period.
+
+$$
+HPR = \frac{V_{end}}{V_{begin}} - 1
+$$
+
+If the investment pays income (e.g., dividends):
+
+$$
+HPR = \frac{P_t + Div_t}{P_0} - 1 = \frac{(P_t - P_0) + Div_t}{P_0}
+$$
+
+**Example:**
+
+A stock is priced at €20, pays €1 in dividends, and ends at €22.
+
+$$
+HPR = \frac{22 + 1}{20} - 1 = 0.15 = 15\%
 $$
 
 ---
 
-### ✅ Key Takeaway
+### 2. Multi-Period Compounding
 
-> Interest rates reflect both the **time value of money** and **compensation for bearing risk**.  
-> The **real risk-free rate** is the foundation, while risk premiums account for inflation, default, liquidity, and maturity.
+Returns over multiple periods reflect **compounding**.  
+Given multiple holding period returns:
+
+$$
+HPR_{total} = (1 + HPR_1)(1 + HPR_2)(1 + HPR_3) \cdots - 1
+$$
+
+For instance, if the yearly HPRs are 5%, 3%, and 7%, then:
+
+$$
+HPR_{total} = (1.05)(1.03)(1.07) - 1 = 1.157805 - 1 = 0.157805 = 15.7805\%
+$$
+
+::: {.callout-tip title="BA II Plus Tip"}
+To compute $(1.05 \times 1.03 \times 1.07) - 1$ on a **BA II Plus**:
+1. Enter `1.05 × 1.03 × 1.07 =`
+2. Then press `− 1 =`  
+Result: `0.157805` (or 15.7805%)
+:::
 
 ---
+
+### 3. Arithmetic Mean Return
+
+The **arithmetic mean** is the simple average of periodic returns.
+
+$$
+\bar{R}_{arith} = \frac{R_1 + R_2 + R_3 + \cdots + R_n}{n}
+$$
+
+It’s an **unbiased estimator** of the true mean of the underlying distribution of returns.
+
+---
+
+### 4. Geometric Mean Return
+
+The **geometric mean** measures the compound rate of growth, accounting for compounding across periods:
+
+$$
+\bar{R}_{geo} = \left[(1 + R_1)(1 + R_2)(1 + R_3)\cdots(1 + R_n)\right]^{1/n} - 1
+$$
+
+#### Example: Geometric Mean Return
+
+Acme Corp. returns: −9.34%, 23.45%, 8.92%.
+
+Compute the compound annual rate of return:
+
+$$
+R_G = \left[(1 - 0.0934)(1 + 0.2345)(1 + 0.0892)\right]^{1/3} - 1
+$$
+
+Step-by-step:
+
+$$
+(1 - 0.0934)(1 + 0.2345)(1 + 0.0892) = 0.9066 \times 1.2345 \times 1.0892 = 1.2190312474
+$$
+
+$$
+R_G = (1.2190312474)^{1/3} - 1 = 1.068250153 - 1 = 0.068250153 = 6.8250153\%
+$$
+
+::: {.callout-tip title="BA II Plus Tip"}
+To compute $(1.2190312474)^{1/3}$ on your **BA II Plus**:
+1. Enter `1.2190312474`
+2. Press `y^x`
+3. Enter `1 ÷ 3` (or `1` → `÷` → `3` → `=`)  
+4. Press `=`
+5. Subtract `1` → Result: `0.068250153`
+:::
+
+---
+
+### 5. Geometric Mean vs. Annual Return
+
+When the holding period is not annual, the root for the geometric mean is the number of periods, while the root for the annual return is the number of years.
+
+**Example:**
+
+Four semiannual returns: 2.0%, 0.5%, −1.0%, 1.5%
+
+Geometric mean (per 6-month period):
+
+$$
+R_G = \left[(1.02)(1.005)(0.99)(1.015)\right]^{1/4} - 1
+$$
+
+$$
+R_G = (1.029203985)^{1/4} - 1 = 1.007435383 - 1 = 0.007435383 = 0.7435383\%
+$$
+
+Annualized Return:
+
+Since four semiannual periods equal two years:
+
+$$
+R_{Annual} = (1.029203985)^{1/2} - 1 = 1.014899316 - 1 = 0.014899316 = 1.4899316\%
+$$
+
+::: {.callout-tip title="BA II Plus Tip"}
+To compute a fractional power such as $(1.029203985)^{1/4}$:
+1. Enter `1.029203985`
+2. Press `y^x`
+3. Enter `1 ÷ 4 =`
+4. Press `=`
+:::
+
+---
+
+### Professor’s Note
+
+> The **geometric mean** is always less than or equal to the **arithmetic mean**.  
+> The greater the variability in returns, the larger the difference between them.  
+> They are equal only when all returns are identical.
+
+---
+
+### 6. Harmonic Mean
+
+The **harmonic mean** is used to average prices or rates when the investment amount per period is fixed.
+A common use is computations such as averagin the cost of shares over time. 
+
+$$
+\bar{X}_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{X_i}}
+$$
+
+#### Example: Average Cost per Share
+
+An investor purchases $1,000 of mutual fund shares each month, and over the last three months, the prices paid per share were $8, $9, and $10. What is the average cost per share?
+
+$$
+\bar{X}_H = \frac{3}{\frac{1}{8} + \frac{1}{9} + \frac{1}{10}} = \frac{3}{0.3361111} = 8.9261248
+$$
+
+Check total shares purchased:
+
+$$
+\frac{1000}{8} + \frac{1000}{9} + \frac{1000}{10} = 125 + 111.1111 + 100 = 336.1111 \text{ shares}
+$$
+
+Average cost:
+
+$$
+\frac{3000}{336.1111} = 8.9261248
+$$
+
+::: {.callout-note title="Interpretation"}
+The **harmonic mean price (\$8.9261)** is less than the **arithmetic mean price (\$9.00)**, demonstrating cost-averaging benefits.
+:::
+
+---
+
+### 7. Harmonic Mean with Negative Returns
+
+When returns include negative values, add 1 to each return term and subtract 1 at the end.
+
+$$
+R_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{1 + R_i}} - 1
+$$
+
+**Example:**
+
+Returns = 2.0%, 0.5%, −1.0%, 1.5%
+
+$$
+R_H = \frac{4}{\frac{1}{1.02} + \frac{1}{1.005} + \frac{1}{0.99} + \frac{1}{1.015}} - 1
+$$
+
+$$
+R_H = \frac{4}{3.98463926} - 1 = 1.003836987 - 1 = 0.003836987 = 0.3836987\%
+$$
+
+::: {.callout-tip title="BA II Plus Tip"}
+For reciprocal operations on the **BA II Plus**:
+1. Enter the number (e.g., `1.02`)
+2. Press `1/x`  
+Do this for each term and sum them before dividing.
+:::
+
+---
+
+### 8. Relationship Among Means
+
+$$
+\text{Arithmetic Mean} \times \text{Harmonic Mean} = (\text{Geometric Mean})^2
+$$
+
+and generally:
+
+$$
+\text{Harmonic Mean} < \text{Geometric Mean} < \text{Arithmetic Mean}
+$$
+
+For values that are not all equal, harmonic mean < geometric mean < arithmetic mean. This mathematical fact is the basis for the claimed benefit of purchasing the same money amount of mutual fund shares each month or each week. Some refer to this practice as **cost averaging**.
+
+---
+
+### 9. Handling Outliers
+
+Outliers (extreme values) can distort average returns.  
+Common approaches:
+
+| Method | Description | Purpose |
+|---------|--------------|----------|
+| **Trimmed Mean** | Remove a percentage of the largest and smallest values | Reduce influence of extremes |
+| **Winsorized Mean** | Replace outliers with nearest non-outlier values | Preserve sample size while minimizing impact |
+
+---
+
+### 10. Appropriate Uses
+
+| Measure | Appropriate Use |
+|----------|-----------------|
+| **Arithmetic Mean** | Expected single-period returns, includes all observations |
+| **Geometric Mean** | Compound returns over multiple periods |
+| **Harmonic Mean** | Average share cost for fixed-dollar investments |
+| **Trimmed/Winsorized Mean** | When outliers distort the dataset |
+
+---
+
+### Key Takeaway
+
+> Each mean serves a unique purpose.  
+> **Arithmetic** = Simple average → Expected return  
+> **Geometric** = Compound average → Growth rate  
+> **Harmonic** = Cost-average rate → Equal investment amounts
 

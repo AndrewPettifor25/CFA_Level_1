@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Andrew Pettifor">
+
+<title>Module 1.1 Interest Rates and Return Measurement</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Module_1.1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Module_1.1_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Module_1.1_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Module_1.1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Module_1.1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Module_1.1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Module_1.1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Module_1.1_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Module_1.1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Module_1.1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Module_1.1_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 1.1 Interest Rates and Return Measurement</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andrew Pettifor </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-1.1-interest-rates-and-return-measurement" class="level1">
+<h1>Module 1.1 Interest Rates and Return Measurement</h1>
+<section id="los-1.a-interpreting-interest-rates" class="level2">
+<h2 class="anchored" data-anchor-id="los-1.a-interpreting-interest-rates">LOS 1.a — Interpreting Interest Rates</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objective">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Interpret interest rates as required rates of return, discount rates, or opportunity costs, and explain an interest rate as the sum of a real risk-free rate and risk premiums.</p>
+</div>
+</div>
+<hr>
+<section id="understanding-interest-rates" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-interest-rates">1. Understanding Interest Rates</h3>
+<p>Interest rates represent the <strong>time value of money</strong> — the compensation investors require for deferring consumption.</p>
+<p>They can be interpreted in three equivalent ways:</p>
+<ul>
+<li><strong>Required rate of return:</strong> the minimum return that investors demand to lend funds.<br>
+</li>
+<li><strong>Discount rate:</strong> the rate used to determine the present value of future cash flows.<br>
+</li>
+<li><strong>Opportunity cost:</strong> the return forgone by consuming now instead of saving or investing.</li>
+</ul>
+<p>In equilibrium, the interest rate equals the <strong>market’s required rate of return</strong>, ensuring that lenders and borrowers are willing to transact.</p>
+<hr>
+</section>
+<section id="the-real-risk-free-rate" class="level3">
+<h3 class="anchored" data-anchor-id="the-real-risk-free-rate">2. The Real Risk-Free Rate</h3>
+<p>The <strong>real risk-free rate</strong> is a <strong>theoretical rate</strong> on a single-period, riskless loan with:</p>
+<ul>
+<li>No expectation of inflation, and<br>
+</li>
+<li>Zero probability of default.</li>
+</ul>
+<p>It reflects <strong>time preference for consumption</strong> — the degree to which individuals prefer current consumption to future consumption.</p>
+<hr>
+</section>
+<section id="nominal-vs.-real-rates" class="level3">
+<h3 class="anchored" data-anchor-id="nominal-vs.-real-rates">3. Nominal vs.&nbsp;Real Rates</h3>
+<p>Because inflation erodes purchasing power, investors demand an <strong>inflation premium</strong> in addition to the real risk-free rate.</p>
+<p>The relationship between nominal and real rates is:</p>
+<p><span class="math display">\[
+(1 + r_{\text{nominal}}) = (1 + r_{\text{real}})(1 + Inf_{\text{expected}})
+\]</span></p>
+<p>A common approximation used throughout the CFA curriculum is:</p>
+<p><span class="math display">\[
+r_{\text{nominal}} \approx r_{\text{real}} + Inf_{\text{expected}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(r_{\text{real}}\)</span> = Real risk-free rate<br>
+</li>
+<li><span class="math inline">\(Inf_{\text{expected}}\)</span> = Expected inflation rate</li>
+</ul>
+<hr>
+</section>
+<section id="risk-premiums" class="level3">
+<h3 class="anchored" data-anchor-id="risk-premiums">4. Risk Premiums</h3>
+<p>Real-world securities often carry additional risks. Investors demand <strong>risk premiums</strong> to compensate for these:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Risk Type</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Premium Added</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Default Risk</strong></td>
+<td>The risk the borrower fails to make payments as promised.</td>
+<td>Default Risk Premium (DRP)</td>
+</tr>
+<tr class="even">
+<td><strong>Liquidity Risk</strong></td>
+<td>The risk of selling an asset below fair value when quick sale is needed.</td>
+<td>Liquidity Premium (LP)</td>
+</tr>
+<tr class="odd">
+<td><strong>Maturity Risk</strong></td>
+<td>The risk that longer-term bonds fluctuate more in price than shorter-term ones.</td>
+<td>Maturity Premium (MP)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="complete-interest-rate-structure" class="level3">
+<h3 class="anchored" data-anchor-id="complete-interest-rate-structure">5. Complete Interest Rate Structure</h3>
+<p>The nominal interest rate on a security combines all these elements:</p>
+<p><span class="math display">\[
+r_{\text{nominal}} = r_{\text{real}} + Inf_{\text{expected}} + \text{DRP} + \text{LP} + \text{MP}
+\]</span></p>
+<hr>
+</section>
+<section id="key-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaway">✅ Key Takeaway</h3>
+<blockquote class="blockquote">
+<p>Interest rates reflect both the <strong>time value of money</strong> and <strong>compensation for bearing risk</strong>.<br>
+The <strong>real risk-free rate</strong> is the foundation, while risk premiums account for inflation, default, liquidity, and maturity.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="los-1.b-calculate-and-interpret-different-approaches-to-return-measurement-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="los-1.b-calculate-and-interpret-different-approaches-to-return-measurement-over-time">LOS 1.b — Calculate and Interpret Different Approaches to Return Measurement Over Time</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objective">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate and interpret different approaches to return measurement over time and describe their appropriate uses.</p>
+</div>
+</div>
+<hr>
+<section id="holding-period-return-hpr" class="level3">
+<h3 class="anchored" data-anchor-id="holding-period-return-hpr">1. Holding Period Return (HPR)</h3>
+<p>The <strong>holding period return (HPR)</strong> measures the percentage increase in the value of an investment over a specific time period.</p>
+<p><span class="math display">\[
+HPR = \frac{V_{end}}{V_{begin}} - 1
+\]</span></p>
+<p>If the investment pays income (e.g., dividends):</p>
+<p><span class="math display">\[
+HPR = \frac{P_t + Div_t}{P_0} - 1 = \frac{(P_t - P_0) + Div_t}{P_0}
+\]</span></p>
+<p><strong>Example:</strong></p>
+<p>A stock is priced at €20, pays €1 in dividends, and ends at €22.</p>
+<p><span class="math display">\[
+HPR = \frac{22 + 1}{20} - 1 = 0.15 = 15\%
+\]</span></p>
+<hr>
+</section>
+<section id="multi-period-compounding" class="level3">
+<h3 class="anchored" data-anchor-id="multi-period-compounding">2. Multi-Period Compounding</h3>
+<p>Returns over multiple periods reflect <strong>compounding</strong>.<br>
+Given multiple holding period returns:</p>
+<p><span class="math display">\[
+HPR_{total} = (1 + HPR_1)(1 + HPR_2)(1 + HPR_3) \cdots - 1
+\]</span></p>
+<p>For instance, if the yearly HPRs are 5%, 3%, and 7%, then:</p>
+<p><span class="math display">\[
+HPR_{total} = (1.05)(1.03)(1.07) - 1 = 1.157805 - 1 = 0.157805 = 15.7805\%
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="BA II Plus Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+BA II Plus Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To compute <span class="math inline">\((1.05 \times 1.03 \times 1.07) - 1\)</span> on a <strong>BA II Plus</strong>: 1. Enter <code>1.05 × 1.03 × 1.07 =</code> 2. Then press <code>− 1 =</code><br>
+Result: <code>0.157805</code> (or 15.7805%)</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="arithmetic-mean-return" class="level3">
+<h3 class="anchored" data-anchor-id="arithmetic-mean-return">3. Arithmetic Mean Return</h3>
+<p>The <strong>arithmetic mean</strong> is the simple average of periodic returns.</p>
+<p><span class="math display">\[
+\bar{R}_{arith} = \frac{R_1 + R_2 + R_3 + \cdots + R_n}{n}
+\]</span></p>
+<p>It’s an <strong>unbiased estimator</strong> of the true mean of the underlying distribution of returns.</p>
+<hr>
+</section>
+<section id="geometric-mean-return" class="level3">
+<h3 class="anchored" data-anchor-id="geometric-mean-return">4. Geometric Mean Return</h3>
+<p>The <strong>geometric mean</strong> measures the compound rate of growth, accounting for compounding across periods:</p>
+<p><span class="math display">\[
+\bar{R}_{geo} = \left[(1 + R_1)(1 + R_2)(1 + R_3)\cdots(1 + R_n)\right]^{1/n} - 1
+\]</span></p>
+<section id="example-geometric-mean-return" class="level4">
+<h4 class="anchored" data-anchor-id="example-geometric-mean-return">Example: Geometric Mean Return</h4>
+<p>Acme Corp.&nbsp;returns: −9.34%, 23.45%, 8.92%.</p>
+<p>Compute the compound annual rate of return:</p>
+<p><span class="math display">\[
+R_G = \left[(1 - 0.0934)(1 + 0.2345)(1 + 0.0892)\right]^{1/3} - 1
+\]</span></p>
+<p>Step-by-step:</p>
+<p><span class="math display">\[
+(1 - 0.0934)(1 + 0.2345)(1 + 0.0892) = 0.9066 \times 1.2345 \times 1.0892 = 1.2190312474
+\]</span></p>
+<p><span class="math display">\[
+R_G = (1.2190312474)^{1/3} - 1 = 1.068250153 - 1 = 0.068250153 = 6.8250153\%
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="BA II Plus Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+BA II Plus Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To compute <span class="math inline">\((1.2190312474)^{1/3}\)</span> on your <strong>BA II Plus</strong>: 1. Enter <code>1.2190312474</code> 2. Press <code>y^x</code> 3. Enter <code>1 ÷ 3</code> (or <code>1</code> → <code>÷</code> → <code>3</code> → <code>=</code>)<br>
+4. Press <code>=</code> 5. Subtract <code>1</code> → Result: <code>0.068250153</code></p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="geometric-mean-vs.-annual-return" class="level3">
+<h3 class="anchored" data-anchor-id="geometric-mean-vs.-annual-return">5. Geometric Mean vs.&nbsp;Annual Return</h3>
+<p>When the holding period is not annual, the root for the geometric mean is the number of periods, while the root for the annual return is the number of years.</p>
+<p><strong>Example:</strong></p>
+<p>Four semiannual returns: 2.0%, 0.5%, −1.0%, 1.5%</p>
+<p>Geometric mean (per 6-month period):</p>
+<p><span class="math display">\[
+R_G = \left[(1.02)(1.005)(0.99)(1.015)\right]^{1/4} - 1
+\]</span></p>
+<p><span class="math display">\[
+R_G = (1.029203985)^{1/4} - 1 = 1.007435383 - 1 = 0.007435383 = 0.7435383\%
+\]</span></p>
+<p>Annualized Return:</p>
+<p>Since four semiannual periods equal two years:</p>
+<p><span class="math display">\[
+R_{Annual} = (1.029203985)^{1/2} - 1 = 1.014899316 - 1 = 0.014899316 = 1.4899316\%
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="BA II Plus Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+BA II Plus Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To compute a fractional power such as <span class="math inline">\((1.029203985)^{1/4}\)</span>: 1. Enter <code>1.029203985</code> 2. Press <code>y^x</code> 3. Enter <code>1 ÷ 4 =</code> 4. Press <code>=</code></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="professors-note" class="level3">
+<h3 class="anchored" data-anchor-id="professors-note">Professor’s Note</h3>
+<blockquote class="blockquote">
+<p>The <strong>geometric mean</strong> is always less than or equal to the <strong>arithmetic mean</strong>.<br>
+The greater the variability in returns, the larger the difference between them.<br>
+They are equal only when all returns are identical.</p>
+</blockquote>
+<hr>
+</section>
+<section id="harmonic-mean" class="level3">
+<h3 class="anchored" data-anchor-id="harmonic-mean">6. Harmonic Mean</h3>
+<p>The <strong>harmonic mean</strong> is used to average prices or rates when the investment amount per period is fixed. A common use is computations such as averagin the cost of shares over time.</p>
+<p><span class="math display">\[
+\bar{X}_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{X_i}}
+\]</span></p>
+<section id="example-average-cost-per-share" class="level4">
+<h4 class="anchored" data-anchor-id="example-average-cost-per-share">Example: Average Cost per Share</h4>
+<p>An investor purchases $1,000 of mutual fund shares each month, and over the last three months, the prices paid per share were $8, $9, and $10. What is the average cost per share?</p>
+<p><span class="math display">\[
+\bar{X}_H = \frac{3}{\frac{1}{8} + \frac{1}{9} + \frac{1}{10}} = \frac{3}{0.3361111} = 8.9261248
+\]</span></p>
+<p>Check total shares purchased:</p>
+<p><span class="math display">\[
+\frac{1000}{8} + \frac{1000}{9} + \frac{1000}{10} = 125 + 111.1111 + 100 = 336.1111 \text{ shares}
+\]</span></p>
+<p>Average cost:</p>
+<p><span class="math display">\[
+\frac{3000}{336.1111} = 8.9261248
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>harmonic mean price ($8.9261)</strong> is less than the <strong>arithmetic mean price ($9.00)</strong>, demonstrating cost-averaging benefits.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="harmonic-mean-with-negative-returns" class="level3">
+<h3 class="anchored" data-anchor-id="harmonic-mean-with-negative-returns">7. Harmonic Mean with Negative Returns</h3>
+<p>When returns include negative values, add 1 to each return term and subtract 1 at the end.</p>
+<p><span class="math display">\[
+R_H = \frac{N}{\sum_{i=1}^{N} \frac{1}{1 + R_i}} - 1
+\]</span></p>
+<p><strong>Example:</strong></p>
+<p>Returns = 2.0%, 0.5%, −1.0%, 1.5%</p>
+<p><span class="math display">\[
+R_H = \frac{4}{\frac{1}{1.02} + \frac{1}{1.005} + \frac{1}{0.99} + \frac{1}{1.015}} - 1
+\]</span></p>
+<p><span class="math display">\[
+R_H = \frac{4}{3.98463926} - 1 = 1.003836987 - 1 = 0.003836987 = 0.3836987\%
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="BA II Plus Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+BA II Plus Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For reciprocal operations on the <strong>BA II Plus</strong>: 1. Enter the number (e.g., <code>1.02</code>) 2. Press <code>1/x</code><br>
+Do this for each term and sum them before dividing.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="relationship-among-means" class="level3">
+<h3 class="anchored" data-anchor-id="relationship-among-means">8. Relationship Among Means</h3>
+<p><span class="math display">\[
+\text{Arithmetic Mean} \times \text{Harmonic Mean} = (\text{Geometric Mean})^2
+\]</span></p>
+<p>and generally:</p>
+<p><span class="math display">\[
+\text{Harmonic Mean} &lt; \text{Geometric Mean} &lt; \text{Arithmetic Mean}
+\]</span></p>
+<p>For values that are not all equal, harmonic mean &lt; geometric mean &lt; arithmetic mean. This mathematical fact is the basis for the claimed benefit of purchasing the same money amount of mutual fund shares each month or each week. Some refer to this practice as <strong>cost averaging</strong>.</p>
+<hr>
+</section>
+<section id="handling-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="handling-outliers">9. Handling Outliers</h3>
+<p>Outliers (extreme values) can distort average returns.<br>
+Common approaches:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 42%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Trimmed Mean</strong></td>
+<td>Remove a percentage of the largest and smallest values</td>
+<td>Reduce influence of extremes</td>
+</tr>
+<tr class="even">
+<td><strong>Winsorized Mean</strong></td>
+<td>Replace outliers with nearest non-outlier values</td>
+<td>Preserve sample size while minimizing impact</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="appropriate-uses" class="level3">
+<h3 class="anchored" data-anchor-id="appropriate-uses">10. Appropriate Uses</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Appropriate Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Arithmetic Mean</strong></td>
+<td>Expected single-period returns, includes all observations</td>
+</tr>
+<tr class="even">
+<td><strong>Geometric Mean</strong></td>
+<td>Compound returns over multiple periods</td>
+</tr>
+<tr class="odd">
+<td><strong>Harmonic Mean</strong></td>
+<td>Average share cost for fixed-dollar investments</td>
+</tr>
+<tr class="even">
+<td><strong>Trimmed/Winsorized Mean</strong></td>
+<td>When outliers distort the dataset</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="key-takeaway-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaway-1">Key Takeaway</h3>
+<blockquote class="blockquote">
+<p>Each mean serves a unique purpose.<br>
+<strong>Arithmetic</strong> = Simple average → Expected return<br>
+<strong>Geometric</strong> = Compound average → Growth rate<br>
+<strong>Harmonic</strong> = Cost-average rate → Equal investment amounts</p>
+</blockquote>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
