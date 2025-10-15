@@ -1,0 +1,93 @@
+---
+title: "Module 1.1 Interest Rates and Return Measurement"
+author: "Andrew Pettifor"
+format: html
+editor: visual
+---
+
+# Module 1.1 Interest Rates and Return Measurement
+
+## LOS 1.a — Interpreting Interest Rates
+
+::: {.callout-note title="Learning Objective"}
+Interpret interest rates as required rates of return, discount rates, or opportunity costs, and explain an interest rate as the sum of a real risk-free rate and risk premiums.
+:::
+
+---
+
+### 1. Understanding Interest Rates
+
+Interest rates represent the **time value of money** — the compensation investors require for deferring consumption.
+
+They can be interpreted in three equivalent ways:
+
+- **Required rate of return:** the minimum return that investors demand to lend funds.  
+- **Discount rate:** the rate used to determine the present value of future cash flows.  
+- **Opportunity cost:** the return forgone by consuming now instead of saving or investing.
+
+In equilibrium, the interest rate equals the **market’s required rate of return**, ensuring that lenders and borrowers are willing to transact.
+
+---
+
+### 2. The Real Risk-Free Rate
+
+The **real risk-free rate** is a **theoretical rate** on a single-period, riskless loan with:
+
+- No expectation of inflation, and  
+- Zero probability of default.
+
+It reflects **time preference for consumption** — the degree to which individuals prefer current consumption to future consumption.
+
+---
+
+### 3. Nominal vs. Real Rates
+
+Because inflation erodes purchasing power, investors demand an **inflation premium** in addition to the real risk-free rate.
+
+The relationship between nominal and real rates is:
+
+$$
+(1 + r_{\text{nominal}}) = (1 + r_{\text{real}})(1 + \pi_{\text{expected}})
+$$
+
+A common approximation used throughout the CFA curriculum is:
+
+$$
+r_{\text{nominal}} \approx r_{\text{real}} + \pi_{\text{expected}}
+$$
+
+Where:  
+- \( r_{\text{real}} \) = Real risk-free rate  
+- \( \pi_{\text{expected}} \) = Expected inflation rate
+
+---
+
+### 4. Risk Premiums
+
+Real-world securities often carry additional risks. Investors demand **risk premiums** to compensate for these:
+
+| **Risk Type** | **Definition** | **Premium Added** |
+|----------------|----------------|-------------------|
+| **Default Risk** | The risk the borrower fails to make payments as promised. | Default Risk Premium (DRP) |
+| **Liquidity Risk** | The risk of selling an asset below fair value when quick sale is needed. | Liquidity Premium (LP) |
+| **Maturity Risk** | The risk that longer-term bonds fluctuate more in price than shorter-term ones. | Maturity Premium (MP) |
+
+---
+
+### 5. Complete Interest Rate Structure
+
+The nominal interest rate on a security combines all these elements:
+
+$$
+r_{\text{nominal}} = r_{\text{real}} + \pi_{\text{expected}} + \text{DRP} + \text{LP} + \text{MP}
+$$
+
+---
+
+### ✅ Key Takeaway
+
+> Interest rates reflect both the **time value of money** and **compensation for bearing risk**.  
+> The **real risk-free rate** is the foundation, while risk premiums account for inflation, default, liquidity, and maturity.
+
+---
+
