@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Andrew Pettifor">
+
+<title>Module 1.2 – LOS 1.c: Money-Weighted vs.&nbsp;Time-Weighted Rates of Return</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Module_1.2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Module_1.2_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Module_1.2_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Module_1.2_files/libs/quarto-html/popper.min.js"></script>
+<script src="Module_1.2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Module_1.2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Module_1.2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Module_1.2_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Module_1.2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Module_1.2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Module_1.2_files/libs/bootstrap/bootstrap-813c323200a87c37e262811031999de4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#module-1.2-money-weighted-and-time-weighted-rates-of-return" id="toc-module-1.2-money-weighted-and-time-weighted-rates-of-return" class="nav-link active" data-scroll-target="#module-1.2-money-weighted-and-time-weighted-rates-of-return">Module 1.2 — Money-Weighted and Time-Weighted Rates of Return</a>
+  <ul class="collapse">
+  <li><a href="#los-1.c-comparing-return-measurement-approaches" id="toc-los-1.c-comparing-return-measurement-approaches" class="nav-link" data-scroll-target="#los-1.c-comparing-return-measurement-approaches">LOS 1.c — Comparing Return Measurement Approaches</a>
+  <ul class="collapse">
+  <li><a href="#money-weighted-rate-of-return-mwrr" id="toc-money-weighted-rate-of-return-mwrr" class="nav-link" data-scroll-target="#money-weighted-rate-of-return-mwrr">1. Money-Weighted Rate of Return (MWRR)</a></li>
+  <li><a href="#example-calculating-the-money-weighted-rate-of-return" id="toc-example-calculating-the-money-weighted-rate-of-return" class="nav-link" data-scroll-target="#example-calculating-the-money-weighted-rate-of-return">Example: Calculating the Money-Weighted Rate of Return</a></li>
+  <li><a href="#calculating-the-money-weighted-return-with-the-ti-ba-ii-plus" id="toc-calculating-the-money-weighted-return-with-the-ti-ba-ii-plus" class="nav-link" data-scroll-target="#calculating-the-money-weighted-return-with-the-ti-ba-ii-plus">Calculating the Money-Weighted Return with the TI BA II Plus®</a></li>
+  </ul></li>
+  <li><a href="#time-weighted-rate-of-return-twrr" id="toc-time-weighted-rate-of-return-twrr" class="nav-link" data-scroll-target="#time-weighted-rate-of-return-twrr">2. Time-Weighted Rate of Return (TWRR)</a>
+  <ul class="collapse">
+  <li><a href="#steps-to-compute-the-annual-time-weighted-return" id="toc-steps-to-compute-the-annual-time-weighted-return" class="nav-link" data-scroll-target="#steps-to-compute-the-annual-time-weighted-return">Steps to Compute the Annual Time-Weighted Return</a></li>
+  <li><a href="#example-time-weighted-rate-of-return" id="toc-example-time-weighted-rate-of-return" class="nav-link" data-scroll-target="#example-time-weighted-rate-of-return">Example: Time-Weighted Rate of Return</a></li>
+  <li><a href="#step-1-break-the-evaluation-period-into-subperiods" id="toc-step-1-break-the-evaluation-period-into-subperiods" class="nav-link" data-scroll-target="#step-1-break-the-evaluation-period-into-subperiods">Step 1: Break the Evaluation Period into Subperiods</a></li>
+  <li><a href="#step-2-calculate-the-hpr-for-each-subperiod" id="toc-step-2-calculate-the-hpr-for-each-subperiod" class="nav-link" data-scroll-target="#step-2-calculate-the-hpr-for-each-subperiod">Step 2: Calculate the HPR for Each Subperiod</a></li>
+  <li><a href="#step-3-find-the-compound-annual-rate-of-return" id="toc-step-3-find-the-compound-annual-rate-of-return" class="nav-link" data-scroll-target="#step-3-find-the-compound-annual-rate-of-return">Step 3: Find the Compound Annual Rate of Return</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#industry-practice" id="toc-industry-practice" class="nav-link" data-scroll-target="#industry-practice">Industry Practice</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">✅ Summary</a></li>
+  <li><a href="#practice-question-1-money-weighted-rate-of-return" id="toc-practice-question-1-money-weighted-rate-of-return" class="nav-link" data-scroll-target="#practice-question-1-money-weighted-rate-of-return">Practice Question 1 — Money-Weighted Rate of Return</a></li>
+  <li><a href="#step-1-identify-cash-flows-1" id="toc-step-1-identify-cash-flows-1" class="nav-link" data-scroll-target="#step-1-identify-cash-flows-1">Step 1: Identify Cash Flows</a></li>
+  <li><a href="#step-2-compute-the-money-weighted-rate-of-return" id="toc-step-2-compute-the-money-weighted-rate-of-return" class="nav-link" data-scroll-target="#step-2-compute-the-money-weighted-rate-of-return">Step 2: Compute the Money-Weighted Rate of Return</a></li>
+  <li><a href="#step-3-solve-for-r-in-r" id="toc-step-3-solve-for-r-in-r" class="nav-link" data-scroll-target="#step-3-solve-for-r-in-r">Step 3: Solve for ( r ) in R</a></li>
+  <li><a href="#explanation-computing-with-the-ba-ii-plus" id="toc-explanation-computing-with-the-ba-ii-plus" class="nav-link" data-scroll-target="#explanation-computing-with-the-ba-ii-plus">Explanation — Computing with the BA II Plus®</a></li>
+  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1">Interpretation</a></li>
+  <li><a href="#practice-question-2-time-weighted-rate-of-return-twrr" id="toc-practice-question-2-time-weighted-rate-of-return-twrr" class="nav-link" data-scroll-target="#practice-question-2-time-weighted-rate-of-return-twrr">Practice Question 2 — Time-Weighted Rate of Return (TWRR)</a></li>
+  <li><a href="#step-1-define-subperiods-value-right-before-external-flows" id="toc-step-1-define-subperiods-value-right-before-external-flows" class="nav-link" data-scroll-target="#step-1-define-subperiods-value-right-before-external-flows">Step 1 — Define Subperiods (value right <strong>before</strong> external flows)</a></li>
+  <li><a href="#step-2-compute-hprs" id="toc-step-2-compute-hprs" class="nav-link" data-scroll-target="#step-2-compute-hprs">Step 2 — Compute HPRs</a></li>
+  <li><a href="#step-3-compound-subperiod-returns-annualized-over-two-years" id="toc-step-3-compound-subperiod-returns-annualized-over-two-years" class="nav-link" data-scroll-target="#step-3-compound-subperiod-returns-annualized-over-two-years">Step 3 — Compound Subperiod Returns (annualized over two years)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 1.2 – LOS 1.c: Money-Weighted vs.&nbsp;Time-Weighted Rates of Return</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andrew Pettifor </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-1.2-money-weighted-and-time-weighted-rates-of-return" class="level1">
+<h1>Module 1.2 — Money-Weighted and Time-Weighted Rates of Return</h1>
+<section id="los-1.c-comparing-return-measurement-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="los-1.c-comparing-return-measurement-approaches">LOS 1.c — Comparing Return Measurement Approaches</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objective">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare the money-weighted and time-weighted rates of return and evaluate the performance of portfolios based on these measures.</p>
+</div>
+</div>
+<hr>
+<section id="money-weighted-rate-of-return-mwrr" class="level3">
+<h3 class="anchored" data-anchor-id="money-weighted-rate-of-return-mwrr">1. Money-Weighted Rate of Return (MWRR)</h3>
+<p>The <strong>money-weighted rate of return (MWRR)</strong> applies the concept of the <strong>internal rate of return (IRR)</strong> to investment portfolios.<br>
+It is the rate that sets the present value of all cash inflows equal to the present value of all cash outflows — in other words, it’s the IRR of all portfolio cash flows.</p>
+<p>Mathematically:</p>
+<p><span class="math display">\[
+0 = \sum_{t=0}^{n} \frac{CF_t}{(1 + r)^t}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li>( CF_t ) = net cash flow at time ( t )<br>
+</li>
+<li>( r ) = internal rate of return (money-weighted rate)</li>
+</ul>
+<hr>
+</section>
+<section id="example-calculating-the-money-weighted-rate-of-return" class="level3">
+<h3 class="anchored" data-anchor-id="example-calculating-the-money-weighted-rate-of-return">Example: Calculating the Money-Weighted Rate of Return</h3>
+<p>An investor:</p>
+<ul>
+<li>Buys 1 share for $100 at ( t = 0 )<br>
+</li>
+<li>Buys another share for $120 at ( t = 1 )<br>
+</li>
+<li>Receives a $2 dividend per share at the end of each year<br>
+</li>
+<li>Sells both shares for $130 each at ( t = 2 )</li>
+</ul>
+<section id="step-1-identify-cash-flows" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-identify-cash-flows">Step 1: Identify Cash Flows</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Time (t)</th>
+<th>Description</th>
+<th>Cash Flow</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Purchase of first share</td>
+<td>+$100</td>
+<td>Inflow</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Purchase of second share</td>
+<td>+$120</td>
+<td>Inflow</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>Dividend from first share</td>
+<td>−$2</td>
+<td>Outflow</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Dividends from both shares</td>
+<td>−$4</td>
+<td>Outflow</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Sale of both shares</td>
+<td>−$260</td>
+<td>Outflow</td>
+</tr>
+</tbody>
+</table>
+<p>Net flows:</p>
+<ul>
+<li>( CF_0 = +100 )<br>
+</li>
+<li>( CF_1 = +118 ) (120 − 2)<br>
+</li>
+<li>( CF_2 = -264 ) (260 + 4)</li>
+</ul>
+<hr>
+</section>
+<section id="step-2-setup-the-equation" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-setup-the-equation">Step 2: Setup the Equation</h4>
+<p><span class="math display">\[
+100 + \frac{118}{(1 + r)} = \frac{264}{(1 + r)^2}
+\]</span></p>
+<hr>
+</section>
+<section id="step-3-solve-for-r" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-solve-for-r">Step 3: Solve for ( r )</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Money-weighted rate of return (IRR)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">118</span>, <span class="sc">-</span><span class="dv">264</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>irr <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(r) <span class="fu">sum</span>(cash_flows <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)), <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>irr <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 13.86128</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="calculating-the-money-weighted-return-with-the-ti-ba-ii-plus" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-the-money-weighted-return-with-the-ti-ba-ii-plus">Calculating the Money-Weighted Return with the TI BA II Plus®</h3>
+<p>Note: The values for F01, F02, and so on, are all equal to <strong>1</strong>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Keystrokes</strong></th>
+<th><strong>Explanation</strong></th>
+<th><strong>Display</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[CF] [2nd][CLR WORK]</td>
+<td>Clear cash flow registers</td>
+<td>CF0 = 0.00000</td>
+</tr>
+<tr class="even">
+<td>100 [ENTER]</td>
+<td>Initial cash outlay</td>
+<td>CF0 = +100.00000</td>
+</tr>
+<tr class="odd">
+<td>[↓] 118 [ENTER]</td>
+<td>Period 1 cash flow</td>
+<td>C01 = +118.00000</td>
+</tr>
+<tr class="even">
+<td>[↓][↓] 264 [+/–][ENTER]</td>
+<td>Period 2 cash flow</td>
+<td>C02 = –264.00000</td>
+</tr>
+<tr class="odd">
+<td>[IRR][CPT]</td>
+<td>Calculate IRR</td>
+<td>IRR = 13.86122</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>money-weighted rate of return</strong> for this problem is:</p>
+<p><span class="math display">\[
+r = 13.86\%
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Professor’s Note">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Professor’s Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this example, we entered the flows <strong>into the account as positive</strong> and the ending value as <strong>negative</strong> (representing an amount that could be withdrawn).</p>
+<p>There is <strong>no difference in the computed IRR</strong> if the cash flows are entered as <strong>negative (out of the investor’s pocket)</strong> and the ending value as <strong>positive (into the investor’s pocket)</strong>.</p>
+<p>As long as <strong>inflows and outflows use opposite signs</strong>, the IRR (money-weighted return) will be correct.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="time-weighted-rate-of-return-twrr" class="level2">
+<h2 class="anchored" data-anchor-id="time-weighted-rate-of-return-twrr">2. Time-Weighted Rate of Return (TWRR)</h2>
+<p>The <strong>time-weighted rate of return (TWRR)</strong> measures <strong>compound growth</strong> — the rate at which $1 compounds over an investment horizon.<br>
+Unlike the MWRR, it <strong>removes the effect of external cash flows</strong>, isolating the portfolio’s true performance.</p>
+<p>TWRR is the <strong>preferred method</strong> in the investment industry because it reflects <strong>manager skill</strong>, not the timing of investor deposits or withdrawals.</p>
+<hr>
+<section id="steps-to-compute-the-annual-time-weighted-return" class="level3">
+<h3 class="anchored" data-anchor-id="steps-to-compute-the-annual-time-weighted-return">Steps to Compute the Annual Time-Weighted Return</h3>
+<ol type="1">
+<li><p><strong>Value the portfolio</strong> immediately before each significant addition or withdrawal, forming subperiods at these dates.<br>
+</p></li>
+<li><p><strong>Compute</strong> the <strong>holding period return (HPR)</strong> for each subperiod:</p>
+<p><span class="math display">\[
+HPR = \frac{V_{end} + D}{V_{begin}} - 1
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li>( V_{end} ) = Ending value of the portfolio<br>
+</li>
+<li>( V_{begin} ) = Beginning value of the portfolio<br>
+</li>
+<li>( D ) = Dividends or income during the period<br>
+</li>
+</ul></li>
+<li><p><strong>Compound</strong> all subperiod returns to find the total return over the entire period:</p>
+<p><span class="math display">\[
+(1 + R_{total}) = (1 + HPR_1)(1 + HPR_2) \cdots (1 + HPR_n)
+\]</span></p></li>
+<li><p>If the total investment period exceeds one year, compute the <strong>geometric mean</strong> to annualize the return:</p>
+<p><span class="math display">\[
+R_{annual} = \left[(1 + HPR_1)(1 + HPR_2)\cdots(1 + HPR_n)\right]^{1/n} - 1
+\]</span></p></li>
+</ol>
+<hr>
+</section>
+<section id="example-time-weighted-rate-of-return" class="level3">
+<h3 class="anchored" data-anchor-id="example-time-weighted-rate-of-return">Example: Time-Weighted Rate of Return</h3>
+<p>An investor purchases a share of stock for <strong>$100 at t = 0</strong>.<br>
+At the end of <strong>Year 1 (t = 1)</strong>, they buy another share for <strong>$120</strong>.<br>
+At the end of <strong>Year 2 (t = 2)</strong>, both shares are sold for <strong>$130 each</strong>.<br>
+Each year, the stock pays a <strong>$2 dividend per share</strong>.</p>
+<hr>
+</section>
+<section id="step-1-break-the-evaluation-period-into-subperiods" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-break-the-evaluation-period-into-subperiods">Step 1: Break the Evaluation Period into Subperiods</h3>
+<p>The evaluation period is divided into <strong>two subperiods</strong> based on the timing of cash flows.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Holding Period</strong></th>
+<th style="text-align: right;"><strong>Beginning Value</strong></th>
+<th style="text-align: right;"><strong>Dividends Paid</strong></th>
+<th style="text-align: right;"><strong>Ending Value</strong></th>
+<th style="text-align: right;"><strong>Shares Held</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">$100</td>
+<td style="text-align: right;">$2</td>
+<td style="text-align: right;">$120</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">$240</td>
+<td style="text-align: right;">$4 ($2 per share)</td>
+<td style="text-align: right;">$260</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="step-2-calculate-the-hpr-for-each-subperiod" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-calculate-the-hpr-for-each-subperiod">Step 2: Calculate the HPR for Each Subperiod</h3>
+<p>[ HPR_1 = - 1 = 0.22 = 22% ]</p>
+<p>[ HPR_2 = - 1 = 0.10 = 10% ]</p>
+<hr>
+</section>
+<section id="step-3-find-the-compound-annual-rate-of-return" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-find-the-compound-annual-rate-of-return">Step 3: Find the Compound Annual Rate of Return</h3>
+<p>The total compound return over the two-year period is:</p>
+<p><span class="math display">\[
+(1 + R_{TWRR})^2 = (1.22)(1.10)
+\]</span></p>
+<p>Solving for ( R_{TWRR} ):</p>
+<p><span class="math display">\[
+R_{TWRR} = \sqrt{(1.22)(1.10)} - 1 = 0.1584 = 15.84\%
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time-weighted rate of return example</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>HPR1 <span class="ot">&lt;-</span> <span class="fl">0.22</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>HPR2 <span class="ot">&lt;-</span> <span class="fl">0.10</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>twrr <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">+</span> HPR1) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> HPR2))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>twrr <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15.84472</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<p>The <strong>time-weighted rate of return (TWRR)</strong> is <strong>not affected by the timing of cash flows</strong>.<br>
+It measures <strong>pure investment performance</strong>, reflecting only how the portfolio itself performed over time.</p>
+<p>In contrast, the <strong>money-weighted rate (13.86%)</strong> assigns <strong>more weight to periods with higher invested capital</strong>.<br>
+In this example, <strong>Year 2</strong> had more capital and a lower HPR (10%) than <strong>Year 1 (22%)</strong>, which caused the <strong>MWRR</strong> to fall below the <strong>TWRR</strong>.</p>
+<p>Because of this weighting difference:</p>
+<ul>
+<li>If funds are added <strong>before poor performance</strong>, → <strong>MWRR &lt; TWRR</strong><br>
+</li>
+<li>If funds are added <strong>before strong performance</strong>, → <strong>MWRR &gt; TWRR</strong></li>
+</ul>
+<hr>
+</section>
+<section id="industry-practice" class="level3">
+<h3 class="anchored" data-anchor-id="industry-practice">Industry Practice</h3>
+<p>In professional investment management:</p>
+<ul>
+<li><strong>TWRR</strong> is the <strong>preferred performance metric</strong> for evaluating portfolio managers,<br>
+since they generally do <strong>not control investor deposits or withdrawals</strong>.<br>
+</li>
+<li><strong>MWRR</strong> is more appropriate when the <strong>investor controls cash flows</strong>,<br>
+such as in <strong>personal accounts</strong>, <strong>private equity</strong>, or <strong>direct investments</strong>.</li>
+</ul>
+<hr>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">✅ Summary</h3>
+<blockquote class="blockquote">
+<p>The <strong>money-weighted rate of return (MWRR)</strong> measures the <strong>investor’s overall experience</strong>, accounting for both investment performance and the timing of cash flows.</p>
+<p>The <strong>time-weighted rate of return (TWRR)</strong> isolates the portfolio’s <strong>true growth</strong>, removing distortions caused by cash flow timing.</p>
+<p><strong>TWRR</strong> is the industry standard for assessing <strong>manager skill</strong>, while <strong>MWRR</strong> is best for evaluating <strong>total investor performance</strong>.</p>
+</blockquote>
+<p>Practice Questions:</p>
+</section>
+<section id="practice-question-1-money-weighted-rate-of-return" class="level3">
+<h3 class="anchored" data-anchor-id="practice-question-1-money-weighted-rate-of-return">Practice Question 1 — Money-Weighted Rate of Return</h3>
+<p><strong>Scenario:</strong></p>
+<p>An investor buys a share of stock for $40 at time ( t = 0 ),<br>
+buys another share for $50 at ( t = 1 ),<br>
+and sells both shares for $60 each at ( t = 2 ).</p>
+<p>The stock also pays a <strong>$1 dividend per share</strong> at ( t = 1 ) and ( t = 2 ).</p>
+<hr>
+</section>
+<section id="step-1-identify-cash-flows-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-identify-cash-flows-1">Step 1: Identify Cash Flows</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 33%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Time (t)</strong></th>
+<th><strong>Transaction</strong></th>
+<th><strong>Cash Flow Calculation</strong></th>
+<th><strong>Net Cash Flow ($)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Purchase first share</td>
+<td>–40</td>
+<td>–40</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Buy one share, receive dividend</td>
+<td>–50 + 1</td>
+<td>–49</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Sell both shares and receive dividends</td>
+<td>(60 × 2) + 2</td>
+<td>+122</td>
+</tr>
+</tbody>
+</table>
+<p>Thus:</p>
+<ul>
+<li>( CF_0 = -40 )<br>
+</li>
+<li>( CF_1 = -49 )<br>
+</li>
+<li>( CF_2 = +122 )</li>
+</ul>
+<hr>
+</section>
+<section id="step-2-compute-the-money-weighted-rate-of-return" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-compute-the-money-weighted-rate-of-return">Step 2: Compute the Money-Weighted Rate of Return</h3>
+<p>Using the IRR formula:</p>
+<p><span class="math display">\[
+0 = CF_0 + \frac{CF_1}{(1 + r)} + \frac{CF_2}{(1 + r)^2}
+\]</span></p>
+<hr>
+</section>
+<section id="step-3-solve-for-r-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-solve-for-r-in-r">Step 3: Solve for ( r ) in R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Practice Question 1 — MWRR</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">40</span>, <span class="sc">-</span><span class="dv">49</span>, <span class="dv">122</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>irr <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(<span class="cf">function</span>(r) <span class="fu">sum</span>(cash_flows <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">2</span>)), <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))<span class="sc">$</span>root</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>irr <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 23.82191</code></pre>
+</div>
+</div>
+</section>
+<section id="explanation-computing-with-the-ba-ii-plus" class="level3">
+<h3 class="anchored" data-anchor-id="explanation-computing-with-the-ba-ii-plus">Explanation — Computing with the BA II Plus®</h3>
+<p>Using the <strong>cash flow (CF)</strong> function on the <strong>TI BA II Plus®</strong>, enter the following:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Keystrokes</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Display</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[CF] [2nd][CLR WORK]</td>
+<td>Clear all cash flow registers</td>
+<td>CF0 = 0.00000</td>
+</tr>
+<tr class="even">
+<td>40 [+/–] [ENTER]</td>
+<td>Enter CF₀ = –40</td>
+<td>CF0 = –40.00000</td>
+</tr>
+<tr class="odd">
+<td>[↓] 49 [+/–] [ENTER]</td>
+<td>Enter CF₁ = –49</td>
+<td>CF1 = –49.00000</td>
+</tr>
+<tr class="even">
+<td>[↓][↓] 122 [ENTER]</td>
+<td>Enter CF₂ = +122</td>
+<td>CF2 = 122.00000</td>
+</tr>
+<tr class="odd">
+<td>[IRR] [CPT]</td>
+<td>Compute the internal rate of return</td>
+<td>IRR = 23.82</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
+<p>The <strong>money-weighted rate of return (MWRR)</strong> for this investment is <strong>23.8%</strong>.<br>
+This result reflects both the <strong>investment’s performance</strong> and the <strong>timing of cash flows</strong> — in other words, it measures the investor’s actual, dollar-weighted return.</p>
+</section>
+<section id="practice-question-2-time-weighted-rate-of-return-twrr" class="level3">
+<h3 class="anchored" data-anchor-id="practice-question-2-time-weighted-rate-of-return-twrr">Practice Question 2 — Time-Weighted Rate of Return (TWRR)</h3>
+<p><strong>Scenario</strong></p>
+<p>An investor buys a share for $40 at <em>t = 0</em>, buys another share for $50 at <em>t = 1</em>, and sells both shares for $60 each at <em>t = 2</em>.<br>
+Dividends of <strong>$1 per share</strong> are paid at <em>t = 1</em> and <em>t = 2</em>.</p>
+<hr>
+</section>
+<section id="step-1-define-subperiods-value-right-before-external-flows" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-define-subperiods-value-right-before-external-flows">Step 1 — Define Subperiods (value right <strong>before</strong> external flows)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><strong>Holding Period</strong></th>
+<th style="text-align: right;"><strong>Beginning Value</strong></th>
+<th style="text-align: right;"><strong>Dividends Paid</strong></th>
+<th style="text-align: right;"><strong>Ending Value</strong></th>
+<th style="text-align: right;"><strong>Shares Held</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$40</td>
+<td style="text-align: right;">$1</td>
+<td style="text-align: right;">$50</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$100</td>
+<td style="text-align: right;">$2</td>
+<td style="text-align: right;">$120</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Period 1 ends when price reaches $50 (before buying the second share).<br>
+</li>
+<li>Period 2 begins at $100 (= 2 × $50) and ends at $120 (= 2 × $60).</li>
+</ul>
+<hr>
+</section>
+<section id="step-2-compute-hprs" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-compute-hprs">Step 2 — Compute HPRs</h3>
+<p><span class="math display">\[
+HPR_1 = \frac{50 + 1}{40} - 1 = 0.275 = 27.5\%
+\]</span></p>
+<p><span class="math display">\[
+HPR_2 = \frac{120 + 2}{100} - 1 = 0.22 = 22.0\%
+\]</span></p>
+<hr>
+</section>
+<section id="step-3-compound-subperiod-returns-annualized-over-two-years" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-compound-subperiod-returns-annualized-over-two-years">Step 3 — Compound Subperiod Returns (annualized over two years)</h3>
+<p><span class="math display">\[
+(1 + R_{TWRR})^2 = (1 + 0.275)(1 + 0.22)
+\]</span></p>
+<p><span class="math display">\[
+R_{TWRR} = \sqrt{(1.275)(1.22)} - 1 = 0.2472 = 24.72\%
+\]</span></p>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Practice Question 2 — TWRR</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>HPR1 <span class="ot">&lt;-</span> (<span class="dv">50</span> <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">40</span> <span class="sc">-</span> <span class="dv">1</span>    <span class="co"># 27.5%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>HPR2 <span class="ot">&lt;-</span> (<span class="dv">120</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">/</span> <span class="dv">100</span> <span class="sc">-</span> <span class="dv">1</span>  <span class="co"># 22.0%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>TWRR <span class="ot">&lt;-</span> ((<span class="dv">1</span> <span class="sc">+</span> HPR1) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> HPR2))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> TWRR, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.72</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

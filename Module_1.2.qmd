@@ -1,0 +1,366 @@
+---
+title: "Module 1.2 – LOS 1.c: Money-Weighted vs. Time-Weighted Rates of Return"
+author: "Andrew Pettifor"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Module 1.2 — Money-Weighted and Time-Weighted Rates of Return
+
+## LOS 1.c — Comparing Return Measurement Approaches
+
+::: {.callout-note title="Learning Objective"}
+Compare the money-weighted and time-weighted rates of return and evaluate the performance of portfolios based on these measures.
+:::
+
+------------------------------------------------------------------------
+
+### 1. Money-Weighted Rate of Return (MWRR)
+
+The **money-weighted rate of return (MWRR)** applies the concept of the **internal rate of return (IRR)** to investment portfolios.  
+It is the rate that sets the present value of all cash inflows equal to the present value of all cash outflows — in other words, it’s the IRR of all portfolio cash flows.
+
+Mathematically:
+
+$$
+0 = \sum_{t=0}^{n} \frac{CF_t}{(1 + r)^t}
+$$
+
+Where:
+
+- \( CF_t \) = net cash flow at time \( t \)  
+- \( r \) = internal rate of return (money-weighted rate)
+
+------------------------------------------------------------------------
+
+### Example: Calculating the Money-Weighted Rate of Return
+
+An investor:
+
+- Buys 1 share for \$100 at \( t = 0 \)  
+- Buys another share for \$120 at \( t = 1 \)  
+- Receives a \$2 dividend per share at the end of each year  
+- Sells both shares for \$130 each at \( t = 2 \)
+
+#### Step 1: Identify Cash Flows
+
+| Time (t) | Description | Cash Flow | Type |
+|-----------|-------------|-----------|------|
+| 0 | Purchase of first share | +\$100 | Inflow |
+| 1 | Purchase of second share | +\$120 | Inflow |
+| 1 | Dividend from first share | −\$2 | Outflow |
+| 2 | Dividends from both shares | −\$4 | Outflow |
+| 2 | Sale of both shares | −\$260 | Outflow |
+
+Net flows:
+
+- \( CF_0 = +100 \)  
+- \( CF_1 = +118 \) (120 − 2)  
+- \( CF_2 = -264 \) (260 + 4)
+
+------------------------------------------------------------------------
+
+#### Step 2: Setup the Equation
+
+$$
+100 + \frac{118}{(1 + r)} = \frac{264}{(1 + r)^2}
+$$
+
+------------------------------------------------------------------------
+
+#### Step 3: Solve for \( r \)
+
+```{r}
+# Money-weighted rate of return (IRR)
+cash_flows <- c(100, 118, -264)
+irr <- uniroot(function(r) sum(cash_flows / (1 + r)^(0:2)), c(0, 1))$root
+irr * 100
+```
+
+### Calculating the Money-Weighted Return with the TI BA II Plus®
+
+Note: The values for F01, F02, and so on, are all equal to **1**.
+
+| **Keystrokes** | **Explanation** | **Display** |
+|----------------|----------------|--------------|
+| [CF] [2nd][CLR WORK] | Clear cash flow registers | CF0 = 0.00000 |
+| 100 [ENTER] | Initial cash outlay | CF0 = +100.00000 |
+| [↓] 118 [ENTER] | Period 1 cash flow | C01 = +118.00000 |
+| [↓][↓] 264 [+/–][ENTER] | Period 2 cash flow | C02 = –264.00000 |
+| [IRR][CPT] | Calculate IRR | IRR = 13.86122 |
+
+The **money-weighted rate of return** for this problem is:
+
+$$
+r = 13.86\%
+$$
+
+::: {.callout-note title="Professor’s Note"}
+In this example, we entered the flows **into the account as positive** and the ending value as **negative** (representing an amount that could be withdrawn).
+
+There is **no difference in the computed IRR** if the cash flows are entered as **negative (out of the investor’s pocket)** and the ending value as **positive (into the investor’s pocket)**.
+
+As long as **inflows and outflows use opposite signs**, the IRR (money-weighted return) will be correct.
+:::
+
+------------------------------------------------------------------------
+
+## 2. Time-Weighted Rate of Return (TWRR)
+
+The **time-weighted rate of return (TWRR)** measures **compound growth** — the rate at which \$1 compounds over an investment horizon.  
+Unlike the MWRR, it **removes the effect of external cash flows**, isolating the portfolio’s true performance.
+
+TWRR is the **preferred method** in the investment industry because it reflects **manager skill**, not the timing of investor deposits or withdrawals.
+
+------------------------------------------------------------------------
+
+### Steps to Compute the Annual Time-Weighted Return
+
+1. **Value the portfolio** immediately before each significant addition or withdrawal, forming subperiods at these dates.  
+2. **Compute** the **holding period return (HPR)** for each subperiod:
+
+   $$
+   HPR = \frac{V_{end} + D}{V_{begin}} - 1
+   $$
+
+   Where:  
+   - \( V_{end} \) = Ending value of the portfolio  
+   - \( V_{begin} \) = Beginning value of the portfolio  
+   - \( D \) = Dividends or income during the period  
+3. **Compound** all subperiod returns to find the total return over the entire period:
+
+   $$
+   (1 + R_{total}) = (1 + HPR_1)(1 + HPR_2) \cdots (1 + HPR_n)
+   $$
+
+4. If the total investment period exceeds one year, compute the **geometric mean** to annualize the return:
+
+   $$
+   R_{annual} = \left[(1 + HPR_1)(1 + HPR_2)\cdots(1 + HPR_n)\right]^{1/n} - 1
+   $$
+
+------------------------------------------------------------------------
+
+### Example: Time-Weighted Rate of Return
+
+An investor purchases a share of stock for **\$100 at t = 0**.  
+At the end of **Year 1 (t = 1)**, they buy another share for **\$120**.  
+At the end of **Year 2 (t = 2)**, both shares are sold for **\$130 each**.  
+Each year, the stock pays a **\$2 dividend per share**.
+
+------------------------------------------------------------------------
+
+### Step 1: Break the Evaluation Period into Subperiods
+
+The evaluation period is divided into **two subperiods** based on the timing of cash flows.
+
+| **Holding Period** | **Beginning Value** | **Dividends Paid** | **Ending Value** | **Shares Held** |
+|--------------------|--------------------:|-------------------:|-----------------:|----------------:|
+| 1 | \$100 | \$2 | \$120 | 1 |
+| 2 | \$240 | \$4 (\$2 per share) | \$260 | 2 |
+
+------------------------------------------------------------------------
+
+### Step 2: Calculate the HPR for Each Subperiod
+
+\[
+HPR_1 = \frac{120 + 2}{100} - 1 = 0.22 = 22\%
+\]
+
+\[
+HPR_2 = \frac{260 + 4}{240} - 1 = 0.10 = 10\%
+\]
+
+------------------------------------------------------------------------
+
+### Step 3: Find the Compound Annual Rate of Return
+
+The total compound return over the two-year period is:
+
+$$
+(1 + R_{TWRR})^2 = (1.22)(1.10)
+$$
+
+Solving for \( R_{TWRR} \):
+
+$$
+R_{TWRR} = \sqrt{(1.22)(1.10)} - 1 = 0.1584 = 15.84\%
+$$
+
+```{r}
+# Time-weighted rate of return example
+HPR1 <- 0.22
+HPR2 <- 0.10
+
+twrr <- ((1 + HPR1) * (1 + HPR2))^(1/2) - 1
+twrr * 100
+
+```
+
+------------------------------------------------------------------------
+
+### Interpretation
+
+The **time-weighted rate of return (TWRR)** is **not affected by the timing of cash flows**.  
+It measures **pure investment performance**, reflecting only how the portfolio itself performed over time.
+
+In contrast, the **money-weighted rate (13.86%)** assigns **more weight to periods with higher invested capital**.  
+In this example, **Year 2** had more capital and a lower HPR (10%) than **Year 1 (22%)**, which caused the **MWRR** to fall below the **TWRR**.
+
+Because of this weighting difference:
+
+- If funds are added **before poor performance**, → **MWRR < TWRR**  
+- If funds are added **before strong performance**, → **MWRR > TWRR**
+
+------------------------------------------------------------------------
+
+### Industry Practice
+
+In professional investment management:
+
+- **TWRR** is the **preferred performance metric** for evaluating portfolio managers,  
+  since they generally do **not control investor deposits or withdrawals**.  
+- **MWRR** is more appropriate when the **investor controls cash flows**,  
+  such as in **personal accounts**, **private equity**, or **direct investments**.
+
+------------------------------------------------------------------------
+
+### ✅ Summary
+
+> The **money-weighted rate of return (MWRR)** measures the **investor’s overall experience**, accounting for both investment performance and the timing of cash flows.
+>
+> The **time-weighted rate of return (TWRR)** isolates the portfolio’s **true growth**, removing distortions caused by cash flow timing.  
+>
+> **TWRR** is the industry standard for assessing **manager skill**, while **MWRR** is best for evaluating **total investor performance**.
+
+
+Practice Questions: 
+
+### Practice Question 1 — Money-Weighted Rate of Return
+
+**Scenario:**
+
+An investor buys a share of stock for \$40 at time \( t = 0 \),  
+buys another share for \$50 at \( t = 1 \),  
+and sells both shares for \$60 each at \( t = 2 \).  
+
+The stock also pays a **\$1 dividend per share** at \( t = 1 \) and \( t = 2 \).
+
+---
+
+### Step 1: Identify Cash Flows
+
+| **Time (t)** | **Transaction** | **Cash Flow Calculation** | **Net Cash Flow (\$)** |
+|---------------|----------------|----------------------------|-------------------------|
+| 0 | Purchase first share | –40 | –40 |
+| 1 | Buy one share, receive dividend | –50 + 1 | –49 |
+| 2 | Sell both shares and receive dividends | (60 × 2) + 2 | +122 |
+
+Thus:
+
+- \( CF_0 = -40 \)  
+- \( CF_1 = -49 \)  
+- \( CF_2 = +122 \)
+
+---
+
+### Step 2: Compute the Money-Weighted Rate of Return
+
+Using the IRR formula:
+
+$$
+0 = CF_0 + \frac{CF_1}{(1 + r)} + \frac{CF_2}{(1 + r)^2}
+$$
+
+---
+
+### Step 3: Solve for \( r \) in R
+
+```{r}
+# Practice Question 1 — MWRR
+cash_flows <- c(-40, -49, 122)
+
+irr <- uniroot(function(r) sum(cash_flows / (1 + r)^(0:2)), c(0, 1))$root
+irr * 100
+
+```
+
+### Explanation — Computing with the BA II Plus®
+
+Using the **cash flow (CF)** function on the **TI BA II Plus®**, enter the following:
+
+| **Keystrokes** | **Description** | **Display** |
+|----------------|----------------|--------------|
+| [CF] [2nd][CLR WORK] | Clear all cash flow registers | CF0 = 0.00000 |
+| 40 [+/–] [ENTER] | Enter CF₀ = –40 | CF0 = –40.00000 |
+| [↓] 49 [+/–] [ENTER] | Enter CF₁ = –49 | CF1 = –49.00000 |
+| [↓][↓] 122 [ENTER] | Enter CF₂ = +122 | CF2 = 122.00000 |
+| [IRR] [CPT] | Compute the internal rate of return | IRR = 23.82 |
+
+---
+
+### Interpretation
+
+The **money-weighted rate of return (MWRR)** for this investment is **23.8%**.  
+This result reflects both the **investment’s performance** and the **timing of cash flows** — in other words, it measures the investor’s actual, dollar-weighted return.
+
+### Practice Question 2 — Time-Weighted Rate of Return (TWRR)
+
+**Scenario**
+
+An investor buys a share for \$40 at *t = 0*, buys another share for \$50 at *t = 1*, and sells both shares for \$60 each at *t = 2*.  
+Dividends of **\$1 per share** are paid at *t = 1* and *t = 2*.
+
+---
+
+### Step 1 — Define Subperiods (value right **before** external flows)
+
+| **Holding Period** | **Beginning Value** | **Dividends Paid** | **Ending Value** | **Shares Held** |
+|--------------------:|--------------------:|-------------------:|-----------------:|----------------:|
+| 1 | \$40 | \$1 | \$50 | 1 |
+| 2 | \$100 | \$2 | \$120 | 2 |
+
+- Period 1 ends when price reaches \$50 (before buying the second share).  
+- Period 2 begins at \$100 (= 2 × \$50) and ends at \$120 (= 2 × \$60).
+
+---
+
+### Step 2 — Compute HPRs
+
+$$
+HPR_1 = \frac{50 + 1}{40} - 1 = 0.275 = 27.5\%
+$$
+
+$$
+HPR_2 = \frac{120 + 2}{100} - 1 = 0.22 = 22.0\%
+$$
+
+---
+
+### Step 3 — Compound Subperiod Returns (annualized over two years)
+
+$$
+(1 + R_{TWRR})^2 = (1 + 0.275)(1 + 0.22)
+$$
+
+$$
+R_{TWRR} = \sqrt{(1.275)(1.22)} - 1 = 0.2472 = 24.72\%
+$$
+
+---
+
+```{r}
+# Practice Question 2 — TWRR
+HPR1 <- (50 + 1) / 40 - 1    # 27.5%
+HPR2 <- (120 + 2) / 100 - 1  # 22.0%
+
+TWRR <- ((1 + HPR1) * (1 + HPR2))^(1/2) - 1
+round(100 * TWRR, 2)
+```
