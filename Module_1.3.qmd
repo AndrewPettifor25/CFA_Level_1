@@ -1,0 +1,223 @@
+---
+title: "Module 1.3"
+author: "Andrew Pettifor"
+format: html
+editor: visual
+---
+
+### LOS 1.d: Calculate and interpret annualized return measures and continuously compounded returns, and describe their appropriate uses
+
+Interest rates and market returns are typically stated as **annualized returns**, regardless of the actual time period over which they occur.  
+To annualize a holding period return (HPR) realized over a specific number of days, use:
+
+$$
+\text{Annualized Return} = (1 + \text{HPR})^{\frac{365}{\text{days}}} - 1
+$$
+
+---
+
+### Example 1 — Annualized Return (Shorter Than One Year)
+
+A saver deposits \$100 into a bank account. After 90 days, the balance is \$100.75.  
+What is the annualized rate of return?
+
+$$
+\text{HPR} = \frac{100.75}{100} - 1 = 0.0075 = 0.75\%
+$$
+
+$$
+\text{Annualized Return} = (1 + 0.0075)^{\frac{365}{90}} - 1 = 0.0308 = 3.08\%
+$$
+
+**BA II Plus Tip**  
+`1 + 0.0075` → `y^x` → `(365 ÷ 90)` → `=` → `− 1`
+
+---
+
+### Example 2 — Annualized Return (Longer Than One Year)
+
+An investor buys a 500-day government bill for \$970 and redeems it at maturity for \$1,000.
+
+$$
+\text{HPR} = \frac{1000}{970} - 1 = 0.0309 = 3.09\%
+$$
+
+$$
+\text{Annualized Return} = (1 + 0.0309)^{\frac{365}{500}} - 1 = 0.0225 = 2.25\%
+$$
+
+---
+
+### Compounding Frequency and Its Effect on PV and FV
+
+In **time value of money (TVM)** calculations, increasing the compounding frequency increases the **effective annual rate (EAR)**, which raises **future value (FV)** and reduces **present value (PV)**.
+
+The general formula for the present value of a future cash flow is:
+
+$$
+PV = FV_N \times \left(1 + \frac{r}{m}\right)^{-mN}
+$$
+
+where:  
+- \(r\) = quoted annual interest rate  
+- \(m\) = compounding periods per year  
+- \(N\) = number of years  
+
+---
+
+### Example — Effect of Compounding Frequency on PV
+
+Compute the PV of \$1,000 to be received one year from now at a stated annual interest rate of 6%.
+
+| **Compounding Frequency** | **m** | **Formula** | **PV** |
+|:---------------------------|:----:|:----------------------------------|:------:|
+| Semiannual | 2 | \(1000(1 + 0.06/2)^{-2}\) | \$942.60 |
+| Quarterly | 4 | \(1000(1 + 0.06/4)^{-4}\) | \$942.18 |
+| Monthly | 12 | \(1000(1 + 0.06/12)^{-12}\) | \$941.91 |
+| Daily | 365 | \(1000(1 + 0.06/365)^{-365}\) | \$941.77 |
+
+---
+
+### Compounding Frequency Effect Summary
+
+| **Compounding Frequency** | **Interest Rate per Period** | **Effective Annual Rate (EAR)** | **Future Value** | **Present Value** |
+|:---------------------------|:-----------------------------:|:------------------------------:|:----------------:|:----------------:|
+| Annual (m = 1) | 6.000% | 6.000% | \$1,060.00 | \$943.40 |
+| Semiannual (m = 2) | 3.000% | 6.090% | \$1,060.90 | \$942.60 |
+| Quarterly (m = 4) | 1.500% | 6.136% | \$1,061.36 | \$942.18 |
+| Monthly (m = 12) | 0.500% | 6.168% | \$1,061.68 | \$941.91 |
+| Daily (m = 365) | 0.016438% | 6.183% | \$1,061.83 | \$941.77 |
+
+---
+
+### Continuous Compounding
+
+As compounding frequency increases indefinitely, it approaches **continuous compounding**.  
+Given an HPR, the continuously compounded rate of return is calculated using the natural logarithm:
+
+$$
+R_{cc} = \ln(1 + \text{HPR}) = \ln\left(\frac{\text{Ending Value}}{\text{Beginning Value}}\right)
+$$
+
+This formula can also be derived directly from the **price relative** (ending value ÷ beginning value).
+
+---
+
+### Example — Continuously Compounded Return
+
+A stock is purchased for \$100 and sold one year later for \$120.
+
+$$
+R_{cc} = \ln\left(\frac{120}{100}\right) = 0.1823 = 18.23\%
+$$
+
+If the return (20%) is known instead:
+
+$$
+R_{cc} = \ln(1 + 0.20) = 0.1823 = 18.23\%
+$$
+
+**BA II Plus Tip**  
+Use `LN(1 + 0.20)` or `LN(120 ÷ 100)` to find \(R_{cc}\).
+
+---
+
+### Key property — Additivity
+
+A useful property of continuously compounded returns is that they are **additive** over multiple periods.  
+That is:
+
+$$
+R_{cc(0,2)} = R_{cc(0,1)} + R_{cc(1,2)}
+$$
+
+This makes continuous returns convenient for long-term performance analysis and portfolio modeling.
+
+
+### LOS 1.e: Calculate and interpret major return measures and describe their appropriate uses
+
+**Gross return** refers to the total return on a security or portfolio **before deducting fees** for management and administration.  
+**Net return** refers to the return **after these fees** have been deducted.  
+Commissions and other necessary transaction costs are deducted in both gross and net return measures.
+
+---
+
+**Pretax nominal return** refers to the return before paying taxes.  
+**After-tax nominal return** refers to the return after the tax liability is deducted.  
+Note that dividend income, interest income, short-term capital gains, and long-term capital gains may all be taxed at **different rates**.
+
+---
+
+**Real return** adjusts the nominal return for inflation.
+
+Example:  
+If an investor earns a nominal return of 7% during a year with 2% inflation:
+
+$$
+\text{Approximate real return} = 7\% - 2\% = 5\%
+$$
+
+$$
+\text{Exact real return} = \frac{1.07}{1.02} - 1 = 0.049 = 4.9\%
+$$
+
+---
+
+Using the components of an interest rate, the relationship between nominal, real, and inflation-adjusted returns can be stated as:
+
+$$
+(1 + \text{real return}) = (1 + \text{nominal risk-free rate})(1 + \text{risk premium})(1 + \text{inflation premium})
+$$
+
+**Professor’s Note**  
+The Level I curriculum often expresses this as:
+
+$$
+(1 + \text{real return}) = (1 + \text{real risk-free rate})(1 + \text{risk premium})(1 + \text{inflation premium})
+$$
+
+This assumes that the **risk premium includes inflation risk**.
+
+---
+
+**Interpretation of real return**
+
+Real return measures the **increase in an investor’s purchasing power**—how much more goods can be purchased due to investment gains.
+
+Example:  
+An investor places \$1,000 at a nominal return of 7%.  
+At year-end, they have \$1,070.  
+If prices rise by 2% (from \$1.00 → \$1.02 per good), their purchasing power is:
+
+$$
+\frac{1,070}{1.02} = 1,049 \text{ units}
+$$
+
+The investor can now buy 1,049 units versus 1,000 initially.  
+Her purchasing power has increased by **4.9%**, which is her **real return**.
+
+---
+
+**Leveraged return**
+
+A **leveraged return** refers to a return that is a **multiple of the underlying asset’s return**.  
+It represents the **gain or loss as a percentage of the investor’s cash investment**.
+
+Leveraged investments arise when borrowing is used—common examples include **futures contracts** (where only a fraction of the underlying asset value is deposited) or **real estate**, where part of the purchase price is financed with debt.
+
+Let a fund invest an amount $V_0$ without leverage and earn a rate of return $r$.  
+Its unleveraged gain (in money terms) is $r \times V_0$.
+
+If the fund borrows $V_B$ at rate $r_B$ and invests the total $V_0 + V_B$ at return $r$,  
+its leveraged gain after interest cost is $r(V_0 + V_B) - r_B V_B$.
+
+Expressed as a rate of return on the initial equity $V_0$:
+
+$$
+\text{Leveraged return} = \frac{r(V_0 + V_B) - r_B V_B}{V_0}
+$$
+
+---
+
+**Interpretation:**  
+Leverage amplifies both **gains and losses**. When the borrowing rate $r_B$ is less than the investment return $r$, leverage increases returns; when $r_B > r$, leverage magnifies losses.
