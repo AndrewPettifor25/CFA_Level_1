@@ -1,0 +1,345 @@
+---
+title: "Module_2.1"
+author: "Andrew Pettifor"
+format: html
+editor: visual
+---
+
+### LOS 2.a: Calculate and interpret the present value (PV) of fixed-income and equity instruments based on expected future cash flows
+
+The **present value (PV)** is the current worth of a future sum of money or stream of cash flows given a specific rate of return.  
+The **future value (FV)** represents how much a present sum will grow to in the future, assuming it earns a constant return rate.
+
+---
+
+### Relationship Between Present and Future Value
+
+$$
+FV = PV(1 + r)^t
+$$
+
+$$
+PV = \frac{FV}{(1 + r)^t} = FV(1 + r)^{-t}
+$$
+
+where:  
+- $r$ = interest rate per compounding period  
+- $t$ = number of compounding periods  
+
+If we are using **continuous compounding**, the relationship becomes:
+
+$$
+FV = PV \times e^{rt}
+$$
+
+$$
+PV = FV \times e^{-rt}
+$$
+
+---
+
+### Fixed-Income Securities
+
+A **pure discount debt instrument**, such as a **zero-coupon bond**, provides a simple example of the **time value of money**.  
+The investor pays less than the face value to buy the instrument and receives the face value at maturity.  
+The **price** depends on the **yield to maturity (YTM)** and **time to maturity**.  
+The **interest earned** is the difference between the face value and purchase price.
+
+---
+
+### Example — Zero-Coupon Bond
+
+A zero-coupon bond with a **face value of \$1,000** will mature **15 years from today**.  
+The bond has a **yield to maturity of 4%** with **annual compounding**.  
+What is the bond’s price?
+
+$$
+PV = \frac{1,000}{(1 + 0.04)^{15}} = \$555.26
+$$
+
+---
+
+### Finding Yield from Price (BA II Plus)
+
+If we are given the **price** of \$555.26, the **face value** of \$1,000, and **annual compounding** over **15 years**, enter:
+
+| Key | Value |
+|-----|-------:|
+| PV | –555.26 |
+| FV | 1,000 |
+| PMT | 0 |
+| N | 15 |
+| CPT → I/Y | 4.00% |
+
+**Result:** The bond’s yield to maturity (YTM) is **4.00%**.
+
+> **Professor’s Note:**  
+> Enter **cash outflows as negative values** and **cash inflows as positive values**.  
+> From the investor’s perspective, **PV (purchase price)** is an **outflow**, and **FV (face value)** is an **inflow**.
+
+---
+
+### Negative Interest Rates
+
+In some circumstances, interest rates can be **negative**.  
+A **zero-coupon bond with a negative yield** will be **priced at a premium** (price > face value).
+
+---
+
+### Example — Zero-Coupon Bond with Negative Yield
+
+If the bond in the previous example has a **yield to maturity of –0.5%**, with **annual compounding**, the price is:
+
+$$
+PV = \frac{1,000}{(1 - 0.005)^{15}} = \$1,078.09
+$$
+
+---
+
+### Fixed-Coupon Bonds
+
+A **fixed-coupon bond** provides periodic **coupon payments** in addition to the **face value** at maturity.  
+The **coupon rate** determines the coupon payment, while the **yield to maturity (YTM)** determines the discount rate used for valuation.
+
+For example, a **3% annual coupon**, **\$1,000 par** bond pays  
+$$30 = 3\% \times 1,000$$  
+each year.
+
+> **Note:**  
+> The **coupon rate** determines **PMT**, not the discount rate.  
+> The **YTM** (I/Y) is the rate implied by the bond’s **price**.
+
+---
+
+### Example — Annual Coupon Bond
+
+Consider a **10-year**, **\$1,000 par**, **10% annual coupon bond**.  
+What is the value of this bond if its **yield to maturity is 8%**?
+
+**Step 1:** Compute annual cash flows.  
+Coupon payments = 10% × \$1,000 = \$100 per year.
+
+**Step 2:** Discount all cash flows to present value.
+
+$$
+PV = \frac{100}{1.08} + \frac{100}{(1.08)^2} + \frac{100}{(1.08)^3} + \dots + \frac{100}{(1.08)^9} + \frac{1,100}{(1.08)^{10}}
+$$
+
+$$
+PV = \$1,134.20
+$$
+
+---
+
+### BA II Plus Solution
+
+| Key | Value |
+|-----|-------:|
+| N | 10 |
+| PMT | 100 |
+| FV | 1,000 |
+| I/Y | 8 |
+| CPT → PV | –1,134.20 |
+
+**Result:** The bond’s value is **\$1,134.20**.
+
+### Professor’s Note
+
+For this reading, where we want to illustrate **time value of money** concepts, we are only using **annual coupon payments** and **compounding periods**.  
+In the **Fixed Income** topic area, we will also perform these calculations for **semiannual-pay bonds**.
+
+---
+
+### Perpetuities
+
+Some bonds have **no maturity date**.  
+We refer to these as **perpetual bonds** or **perpetuities**.  
+Because perpetuities never mature, we cannot define a meaningful **future value**, but their **present value** simplifies mathematically to:
+
+$$
+PV_{\text{perpetuity}} = \frac{\text{payment}}{r}
+$$
+
+---
+
+### Amortizing Bonds and Annuities
+
+An **amortizing bond** pays a **level amount each period**, including its final maturity payment.  
+Each payment includes **both interest and principal**, unlike a **fixed-coupon bond**, which returns the **entire principal** at maturity.
+
+Amortizing bonds are examples of **annuity instruments**.  
+For an **annuity**, the periodic payment can be calculated as:
+
+$$
+\text{Annuity Payment} = \frac{r \times PV}{1 - (1 + r)^{-t}}
+$$
+
+where:  
+- $r$ = interest rate per period  
+- $t$ = number of periods  
+- $PV$ = present value (principal)
+
+---
+
+### Example — Computing a Loan Payment
+
+Suppose you are considering applying for a **\$2,000 loan** that will be repaid with **equal end-of-year payments** over the next **13 years**.  
+If the annual interest rate is **6%**, what is the size of each payment?
+
+We can compute the **payment (PMT)** using the given values.  
+Since the loan will be fully repaid, **FV = 0**.
+
+| Key | Value |
+|-----|-------:|
+| N | 13 |
+| I/Y | 6 |
+| PV | –2,000 |
+| FV | 0 |
+| CPT → PMT | 225.92 |
+
+**Result:** The end-of-year payment is **\$225.92**.
+
+---
+
+### Equity Securities
+
+Just as with fixed-income securities, we value **equity securities** (such as **common** and **preferred stock**) as the **present value of their expected future cash flows**.  
+However, **equity securities** differ in two important ways:  
+1. They **do not mature**.  
+2. Their **cash flows may change** over time.
+
+---
+
+### Preferred Stock Valuation
+
+Preferred stock pays a **fixed dividend**, usually stated as a **percentage of par value**.  
+The investor’s **required return** is the **discount rate** used to value the stock.
+
+Because preferred dividends are **fixed and indefinite**, we can use the **perpetuity formula**:
+
+$$
+V_{\text{preferred}} = \frac{D_p}{k_p}
+$$
+
+where:  
+- $D_p$ = dividend per period  
+- $k_p$ = required return on the preferred stock
+
+---
+
+### Example — Preferred Stock Valuation
+
+A company’s **\$100 par preferred stock** pays a **\$5 annual dividend** and has a **required return of 8%**.  
+Calculate the value of the preferred stock.
+
+$$
+V_{\text{preferred}} = \frac{5.00}{0.08} = \$62.50
+$$
+
+**Result:** The preferred stock’s value is **\$62.50**.
+
+---
+
+### Common Stock Valuation
+
+Common stock represents a **residual claim** on a company’s assets after all obligations are met.  
+Unlike preferred stock, it **does not promise fixed dividends** — the company’s management decides **if and when** dividends are paid.
+
+Because cash flows are **uncertain**, analysts use **dividend discount models (DDMs)** to estimate value.  
+We focus on three key versions:
+
+1. **Constant Dividend (Perpetuity)** — dividends are constant forever.  
+2. **Constant Growth (Gordon Growth Model)** — dividends grow at a constant rate.  
+3. **Multistage Growth** — dividends grow at varying rates before stabilizing.
+
+---
+
+### 1. Constant Dividend (Perpetuity)
+
+If dividends remain **constant forever**, we use the **perpetuity formula**:
+
+$$
+V_0 = \frac{D}{k_e}
+$$
+
+---
+
+### 2. Constant Growth Model (Gordon Growth Model)
+
+If dividends are expected to grow at a **constant rate**, the value of a stock is:
+
+$$
+V_0 = \frac{D_1}{k_e - g_c}
+$$
+
+where:  
+- $V_0$ = current value of the stock  
+- $D_1$ = dividend expected next period  
+- $k_e$ = required return on equity  
+- $g_c$ = constant growth rate of dividends  
+
+> Note: $k_e$ must be **greater than** $g_c$ for the model to work.
+
+---
+
+### Example — Gordon Growth Model Valuation
+
+Calculate the value of a stock expected to pay a **\$1.62 dividend next year**, with dividends growing at **8% forever**, and a **required return of 12%**.
+
+$$
+V_0 = \frac{1.62}{0.12 - 0.08} = \$40.50
+$$
+
+**Result:** The stock’s value is **\$40.50**.
+
+---
+
+### 3. Multistage Dividend Discount Model (DDM)
+
+If a stock experiences **changing dividend growth**, we use the **multistage DDM**.  
+This assumes **high short-term growth** followed by **constant long-term growth**.
+
+Steps:  
+1. Estimate short-term dividends individually.  
+2. Apply the **constant growth model** starting from the first dividend that grows at the constant rate.  
+3. Discount all cash flows back to present value.
+
+---
+
+### Example — Multistage Growth
+
+A stock’s dividends are expected to **grow at 15% per year for two years**, then **5% per year indefinitely**.  
+The **last dividend paid (D₀)** was **\$1.00**, and the **required return (kₑ)** is **11%**.  
+Find the value of the stock.
+
+**Step 1 — Compute high-growth dividends**
+
+$$
+D_1 = D_0(1 + g^*) = 1.00(1.15) = 1.15
+$$
+
+$$
+D_2 = D_1(1 + g^*) = 1.15(1.15) = 1.32
+$$
+
+**Step 2 — Find terminal value (P₁)** using the constant growth model from D₂ onward:
+
+$$
+P_1 = \frac{D_2}{k_e - g_c} = \frac{1.32}{0.11 - 0.05} = 22.00
+$$
+
+**Step 3 — Discount D₁ and P₁ back to present**
+
+$$
+V_0 = \frac{1.15 + 22.00}{1.11} = \$20.86
+$$
+
+**Result:** The value of the stock today is **\$20.86**.
+
+---
+
+### Professor’s Note
+
+When we apply the **dividend in Period 2** to the **constant growth model**, it yields a **value for the stock in Period 1**.  
+To obtain the **current value (V₀)**, we must **discount that value back one period**, along with any earlier dividends **not included** in the constant growth portion.
+
